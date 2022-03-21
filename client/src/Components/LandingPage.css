@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+body{
+  margin-top: 40px;
+  margin-block-end: auto;
+    background-color: rgb(255, 94, 0);
+    background-size: cover;
+    background-position: center ;
+    background-attachment: fixed;
+
+}
+
+  
+.divLanding{
+    padding:20px;
+    
+    font-style: oblique;
+
+}
+
+  
+  .wrapper {
+    padding: 1.5rem 0;
+    filter: url('#goo');
+}
+
+.button {
+  margin-left: 53%;
+  transform: translateX(-50%);
+  margin-top: 460px;
+  font-family: 'Press Start 2P', cursive;
+
+    display: inline-block;
+    text-align: center;
+    background:  #eee;;
+    color: #1a1e24;
+    font-weight: bold;
+    padding: 0.2em 0.2em 0.2em;
+    line-height: 1;
+    border-radius: 1em;
+    border-color: orange;
+    position: relative;  
+    font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;;
+    font-size: 1rem;
+    background-color: #1a1e24;
+    color: rgb(255, 255, 255)
+}
+
+.button {
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.5s;
+  }
+
+.button:before,
+.button:after {
+    width: 5em;
+    height: 3em;
+    position: absolute;
+    content: "";
+    display: inline-block;
+    background:rgb(63, 61, 61);
+    border-radius: 50%;
+    transition: transform 1s ease;
+    transform: scale(0);
+    z-index: -1;
+    
+}
+
+.button:before {
+    top: -25%;
+    left: 20%;
+}
+
+.button:after {
+    bottom: -25%;
+    right: 20%;
+}
+
+.button:hover:before,
+.button:hover:after {
+    transform: none;
+}
+
+
+
+
+
+.titleLanding{
+    position: absolute;
+    left:50%;
+    font-size: 25px;
+    font-family: 'Press Start 2P', cursive;
+    margin-left: -400px; 
+    animation-duration: 2s;
+    animation-name: title;
+    color:whitesmoke;
+    margin-top: 15px;
+   
+  }
+  @keyframes title {
+      from {
+        margin-left: 10%;
+        width: 400%;
+      }}
