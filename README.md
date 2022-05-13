@@ -20,7 +20,7 @@ It is an application in which you can see the different video games available to
   - Add new video games
 
 #### Used technology:
--[ ] React
+- [ ] React
 - [ ] Redux
 - [ ] Express
 - [ ] Sequelize - Postgres
