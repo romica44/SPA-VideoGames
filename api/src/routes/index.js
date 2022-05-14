@@ -97,7 +97,7 @@ router.get('/videogames', async (req,res)=> {
     const name = req.query.name;
     let vgameAll = await allGames();
     if (name) {
-        let gameName = await vgameAll.filter(e => e.name.toLowerCase().includes(name.toLowerCase()));
+        let gameName = vgameAll.filter(e => e.name.toLowerCase().includes(name.toLowerCase()));
         gameName.length ?
             res.status(200).send(gameName) :
             res.status(404).send('No se encontró el Juego');
@@ -110,14 +110,23 @@ router.get('/videogames', async (req,res)=> {
 
 //videosgames por ID
 router.get('/videogames/:id', async (req,res)=>{
-   const {id} = req.params;
-   const vgameAll = await allGames();
-   if (id){
-    let gameId= await vgameAll.filter( e => e.id === id);
-    gameId.length ?
-    res.status(200).send(gameId):
-    res.status(404).send('Id not found');
-   } 
+  const { id } = req.params;
+  try {
+    if (id.includes("-")) { //detectar UUID en DB
+      const gameDB = await Videogame.findOne({
+        where: { id },
+        include: [Genre, Platform],
+      });
+      return res.json(gameDB);
+    }
+
+    const gameAPI = await axios.get(
+      `https://api.rawg.io/api/games/${id}?key=${API_KEY}`
+    );
+    res.json(gameAPI.data);
+  } catch (err) {
+    res.status(404).json({ error: "Id not found" });
+  }
 })
 
 //ruta de genres

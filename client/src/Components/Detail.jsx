@@ -7,6 +7,7 @@ import "./Detail.scss";
 
 export default function Detail(props){
     console.log(props)
+    
     const dispatch = useDispatch();
     const {id} = useParams();
 
@@ -16,7 +17,8 @@ export default function Detail(props){
 
     const gameDetail = useSelector((state)=> state.detail)
     console.log(gameDetail)
-    
+
+     
     return (
         <>
         <div className='home'>
