@@ -1,0 +1,34 @@
+.search-container{
+    position: relative;
+
+}
+
+.search{
+    width: 60rem;
+    outline: none;
+    height: 3rem;
+    border-radius: 2rem;
+    border: none;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.search-button{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  border-radius: 50%;
+  background-image: linear-gradient(45deg,gold, black);
+
+  color: white;
+}
+
+@media only screen and (max-width: 1000px) {
+    .search {
+      width: 30rem;
+    }
+  }

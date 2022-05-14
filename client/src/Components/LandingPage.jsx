@@ -1,17 +1,20 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import './LandingPage.css'
+import './LandingPage.scss'
 
 
 export default function LandingPage(){
     return (
-        <body className='body' background="https://i.postimg.cc/6pw68VMw/game-default.jpg">
-        <div className='divLanding'>
-            <div className='titleLanding'>SEARCH YOUR FAVORITE GAMES!</div>
+        <>
+        <div className='titleLanding'>SEARCH YOUR FAVORITE GAMES!</div>
+        
+        <div className='landing'>
+
             <Link to="/home">
-                <button type="" className='button'>ENTER</button>
+                <button type="" className='landingBtn'>ENTER</button>
             </Link>
+          
         </div>
-        </body>
+        </>
     )
 }

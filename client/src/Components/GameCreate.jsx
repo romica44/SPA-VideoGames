@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import {Link} from 'react-router-dom';
 import {Navigate} from 'react-router';
 import {getGenres, createGame} from '../Actions/index';
+import line from "./images/yellow-line.png";
+import "./GameCreate.scss";
 
 //manejo de errores en los inputs del juego creado
 function validate(input){
@@ -88,30 +90,37 @@ export default function CreateGame(){
     }
 
     return (
-        <div>
-            <Link to='/Home'><button className='buttonCreation'>Return Home</button></Link>
-            <div className='jockstick'>
-            <img src="https://i.postimg.cc/jjLYpfPM/kisspng-joystick-game-controllers-video-games-xbox-36-con-5d4bbcc2dce4e3-4089880215652446109048.png" width='100px' height='150px' alt=''></img>
-            </div>
-            <div>
-                <h1 className='titlecreateG'>Create a new Game</h1>
-                <form className='formcreate' onSubmit={(e)=> handleSubmit(e)}>
+        <>
+        <div classname= "home-button">
+            <Link to='/Home'><button className='home-btn'>Return Home</button></Link>
+        </div>
+        <div className='line'>
+        <img className="line-img" alt="divisor" src={line}/>
+        </div>
+        <h1 className='page-title'>Create a new Game</h1>
+        <div className="main">
+            <div className="create-Game">
+                <div className="left">
+                    <img className="create-img" alt="game-img" src="https://i.pinimg.com/originals/f7/a9/e3/f7a9e3bdd347b543baa91e1ad80257bd.jpg"/>
+                </div>
+        <div className="right"></div>
+            <form className='creation-from' onSubmit={(e)=> handleSubmit(e)}>
                     <div>
-                        <input classname='textname' placeholder='Name' type='text' name='name' required='required' 
+                        <input classname='inputs' placeholder='Name' type='text' name='name' required='required' 
                         value={input.name} onChange={(e)=>handleChange(e)}/>
                         {error.name && (<p className='error'>{error.name}</p>)}
                     </div>
                     <div>
-                        <input classname='textdesc' placeholder='Describe your game' type='text' name='description' required='required' 
+                        <input classname='inputs' placeholder='Describe your game' type='text' name='description' required='required' 
                         value={input.description} onChange={(e)=>handleChange(e)}/>
                         {error.description && (<p className='error'>{error.description}</p>)}
                     </div>
-                    <div>
-                        <input classname='textreleased' placeholder='Enter the creation date' type='text' name='released' required='required' 
+                    <div className="date-input">
+                        <input placeholder='Enter the creation date' type='text' name='released' required='required' 
                         value={input.released} onChange={(e)=>handleChange(e)}/>
                     </div>
-                    <div>
-                        <input classname='textrating' placeholder='Rating Game' type='text' name='rating' required='required' 
+                    <div classname='rating-input'>
+                        <input classname='inputs' placeholder='Rating Game' type='text' name='rating' required='required' 
                         value={input.rating} onChange={(e)=>handleChange(e)}/>
                         {error.rating && (<p className='error'>{error.rating}</p>)}
                     </div>
@@ -131,5 +140,6 @@ export default function CreateGame(){
                 </form>
             </div>
         </div>
+        </>
     )
 }

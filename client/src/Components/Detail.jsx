@@ -3,6 +3,7 @@ import {useDispatch, useSelector}  from 'react-redux';
 import {getDetail} from "../Actions/index";
 import { useParams } from 'react-router';
 import {Link} from 'react-router-dom';
+import "./Detail.scss";
 
 export default function Detail(props){
     console.log(props)
@@ -17,19 +18,22 @@ export default function Detail(props){
     console.log(gameDetail)
     
     return (
-        <div>
+        <>
+        <div className='home'>
             <Link to= '/Home'>
-                <button className='buttonHome'>Return Home</button>
+                <button className='home-btn'>Return Home</button>
             </Link>
             {
                 gameDetail.name?
-                <div className='detail'>
-                    <div className='titleDetails'><p>{gameDetail}</p></div>
-                    <div className='imgDetail'><img src ={gameDetail.background_image} width='300' height='400' alt=''/></div>
-                    <div className='descDetail'><p className='pDescrip'>
-                        {!gameDetail.create? 
-                        gameDetail.description.replace(/(<([^>]+)>)/ig, ''):
-                        gameDetail.description}</p></div>
+                <div className='detail-container'>
+                    <div className='name'><p>{gameDetail}</p></div>
+                    <div className='detail-image'>
+                        <img src ={gameDetail.background_image} width='300' height='400' alt=''/></div>
+                    <div className='details'>
+                        <p className='description'>
+                            {!gameDetail.create? 
+                            gameDetail.description.replace(/(<([^>]+)>)/ig, ''):
+                            gameDetail.description}</p></div>
                 <div><h3>Released Date:{gameDetail.released}</h3></div>
                 <div><h3>Rating:{gameDetail.rating}</h3></div>
 
@@ -49,6 +53,7 @@ export default function Detail(props){
                 :null
             }
         </div>
+        </>
     )
 }
 

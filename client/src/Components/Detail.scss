@@ -1,0 +1,64 @@
+.divisor-line{
+    margin-top: -4rem;
+    margin-bottom: -2rem;
+    height: 150px;
+    width: 350px;
+}
+
+.detail-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.detail-image{
+    max-width: auto;
+    margin: 1.5rem;
+    margin-top: 2rem;
+    height: 48%;
+    width: 35%;
+    border-radius: 10px;
+    filter: drop-shadow(9px 14px 81px #6d6161);
+}
+
+.details{
+    font-size: 1rem;
+}
+
+.name{
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.home{
+margin-top: 2rem;
+margin-bottom: 5rem;
+margin-right: 4rem;
+margin-left: 4rem;
+
+   
+}
+
+.home-btn{
+    color: white;
+    font-size: 1rem;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    &:hover:not(.active) {
+        background-color: gold;
+        color: black;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .detail-container {
+      flex-direction: column;
+      width: auto;
+    }
+  }
+

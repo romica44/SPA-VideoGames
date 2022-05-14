@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 450px);
+  gap: 40px;
+  padding: 40px;
+  justify-content: center;
+
+  
+  }
+  
+  .create-btn {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    
+  }
+
+  .A{
+    margin: 1em;
+    padding: 1em;
+    float: left;
+
+    
+    
+}
+.B{
+    margin: 1em;
+    padding: 1em;
+    float: left;
+}
+.C{
+    margin: 1em;
+    padding: 1em;
+    float: left;
+}
+.D{
+    margin: 1em;
+    padding: 1em;
+    float: left;
+}
+
+.cartas{
+  display:grid;
+  grid-template-columns:repeat(5, 1fr);
+  grid-template-rows: repeat(3,1fr);
+  grid-gap:10px
+}
+
+  .create-game{
+    color: white;
+    font-size: 1rem;
+    float: left;
+    margin-top: 20px;
+    margin-left: 250px;
+    margin-right: 10px;
+    padding: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover:not(.active) {
+      background-color: gold;
+      color: black;
+    }
+  }
+
+    .reset-home{
+      color: white;
+      font-size: 1rem;
+      float: left;
+      padding: 8px;
+      margin-top: 20px;
+      margin-right: 10px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      cursor: pointer;
+
+    &:hover:not(.active) {
+        background-color: gold;
+        color: black;
+    }
+
+  }
+  .reload-btn {
+    display: flex;
+    margin-bottom: 1px;
+    float: center;
+    justify-content: center;
+  }
+  
+  .reload {
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+    float: right;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    &:hover:not(.active) {
+        background-color: gold;
+        color: black;
+    }
+  }
+  .marginBottom {
+      margin-bottom: 2rem;
+      cursor: pointer;
+  }

@@ -113,7 +113,7 @@ router.get('/videogames/:id', async (req,res)=>{
    const {id} = req.params;
    const vgameAll = await allGames();
    if (id){
-    let gameId= await vgameAll.filter( e => e.id == id);
+    let gameId= await vgameAll.filter( e => e.id === id);
     gameId.length ?
     res.status(200).send(gameId):
     res.status(404).send('Id not found');
